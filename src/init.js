@@ -31,11 +31,21 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 1000
+      Math.random() * 1000, window.dancers
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
   });
+
+  $('.lineUp').on('click', function(event) {
+    var lineUp = function() {
+      for (var i = 0; i < window.dancers.length; i++) {
+        window.dancers[i].$node.css({top: 25});
+      }
+    };
+    lineUp();
+  });
+
 
 });
 
