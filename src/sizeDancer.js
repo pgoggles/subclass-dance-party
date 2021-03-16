@@ -6,7 +6,7 @@ var makeSizeDancer = function(top, left, timeBetweenSteps) {
 
 makeSizeDancer.prototype = Object.create(makeDancer.prototype);
 makeSizeDancer.prototype.constructor = makeSizeDancer;
-makeSizeDancer.prototype.step = function () {
-  makeDancer.prototype.step.call(this);
-  this.$node.toggle();
-};
+// makeSizeDancer.prototype.step = function () {
+//   makeDancer.prototype.step.call(this);
+//   // this.$node.toggle();
+// };

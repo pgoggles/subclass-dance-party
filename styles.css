@@ -5,6 +5,9 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0065/4917/6438/products/a-groovy-looking-nightclub-dance-floor-background_576a9abb-3b3f-4ba8-9309-87eb60a6d911_1024x1024@2x.jpg?v=1549230950');
+  width: 100%;
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -20,23 +23,59 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
+/* .dancer{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+} */
+
+
+.blinkyDancer{
+  position:absolute;
+  background-image: url(/imgs/scooby.png);
+  background-size: contain;
+  width: 160px;
+  height: 160px;
+  background-repeat: no-repeat;
+  animation-name: changeOpacity;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes changeOpacity {
+  0% {opacity: 1;}
+  50% {opacity: 0; left: 25px;}
+  100% {opacity: 1;}
 }
 
 .sizeDancer{
-  border:10px solid yellow;
-  border-radius:0px;
   position:absolute;
+  background-image: url(/imgs/shaggy.png);
+  background-size: contain;
+  width: 160px;
+  height: 160px;
+  background-repeat: no-repeat;
+  animation-name: changeSize;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+}
+@keyframes changeSize {
+  0% {width: 160px; height: 160px;}
+  100% {width: 250px; height: 250px;}
 }
 
 .movingDancer{
-  border:10px solid green;
-  border-radius:15px;
+  /* border:10px solid green; */
   position:absolute;
+  background-size: contain;
+  width: 160px;
+  height: 160px;
+  filter: sepia(100%);
+  background-repeat: no-repeat;
 }
+
 .dancer:hover {
-  border-color: black;
+  filter: blur(0.5rem);
 }

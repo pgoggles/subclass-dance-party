@@ -15,7 +15,8 @@ makeMovingDancer.prototype.step = function () {
 
 makeMovingDancer.prototype.updateColor = function () {
   if (this.allDancers.length === 0) {
-    this.$node.css('border-color', 'white');
+    this.$node.css('background-image', 'url(/imgs/ghost.png)');
+    return null;
   } else {
     var nearestDancer = this.allDancers[0];
     var closestDistance = this.calculateDistance(this.allDancers[0].top, this.allDancers[0].left);
@@ -26,8 +27,9 @@ makeMovingDancer.prototype.updateColor = function () {
         nearestDancer = this.allDancers[i];
       }
     }
-    var nearestColor = nearestDancer.$node.css('border-color');
-    this.$node.css('border-color', nearestColor);
+    var nearestImage = nearestDancer.$node.css('background-image');
+    this.$node.css('background-image', nearestImage);
+    return nearestDancer;
   }
 };
 
